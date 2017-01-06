@@ -1,0 +1,107 @@
+<!doctype.html>
+<html>
+ <head>
+      
+     <title>login</title>
+	 <!-- <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <!-- <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>  -->
+<!--	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	 <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+	  
+<link rel="stylesheet" href="src/css/loginpage.css">
+		 <!--<script src="login.js"></script> 
+	 <script src="loginctrl.js"></script> -->
+		 
+
+<script type="text/ng-template" id="messages.html">
+ <p ng-message="required" style="color:black">email-id   required</p>
+<p ng-message="minlength" style="color:black">This field is too short</p>
+<p ng-message="maxlength" style="color:black">This field is too long</p>
+<p ng-message="email" style="color:black">This needs to be a valid email</p>
+</script>
+
+
+<script type="text/ng-template"id="messages1.html">
+<p ng-message="required" style="color:black">password  required</p>
+		 
+</script>		
+	
+
+
+	
+		 
+</head>
+
+<div id="grad1">
+<body>
+     
+</br>
+</br>
+</br>
+</br>
+	  
+<div class="main-login main-center">
+   
+{{result}}
+
+<br/>
+
+ <center> <form name="form1" novalidate="">
+ 
+ 
+ 
+ 
+   <div class="row0">
+		<label for="name" class="col-sm-3 control-lable">Email id:</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" ng-model="data.emailid" name="email1" id="email2" placeholder="Enter email id" required />
+				{{data.emailid}}
+				<div ng-messages="form1.email1.$error" ng-if="form1.email1.$touched && form1.email1.$error">
+				<div ng-messages-include="messages.html"></div>
+				
+			</div>
+	   </div>
+	</div>
+	   
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+  
+  
+   <div class="row1">
+		<label for="name" class="col-sm-3 control-lable">password:</label>
+			<div class="col-sm-8">
+				<input type="password" class="form-control" ng-model="data.password" name="password1" id="password2" placeholder="Enter password" required />
+				{{data.password}}
+				<div ng-messages="form1.password1.$error" ng-if="form1.password1.$touched && form1.password1.$error">
+				<div ng-messages-include="messages1.html"></div>
+				
+			</div>
+	   </div>
+	</div>
+	   
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	 
+	 
+	
+
+	
+	<center>  <button type="submit"  ng-click="submit()" class="btn btn-primary btn-large" style="width:100px">Login</button></center>
+	</br>
+	<center> <a href="#"><span style="color:blue"> Forgot password </span></a></center>
+	
+</div>
+
+</body>
+</div>
+</html>

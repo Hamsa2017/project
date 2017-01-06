@@ -1,0 +1,130 @@
+<!doctype.html>
+<html ng-app="myApp">
+   <head>
+     <!-- <title>Allot permission</title>
+	 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <!-- <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>  -->
+<!--	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	 <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	
+	 <script src="allotpermission.js"></script>
+	 <script src="allotpermissionctrl.js"></script>-->
+	 
+	 
+	  <link rel="stylesheet" href="src/css/allotpermission.css">
+	 
+	 <script type="text/ng-template"id="messages1.html">
+	<p ng-message="required">field required</p>
+	</script>
+	
+	</head>
+
+	
+	<body ng-controller="allotpermissionCtrl">
+	
+	</br>
+	<div class="main-login main-center">
+   <center><div class="headding"><h3>Allot permission</h3></div></center>
+   
+   <form name="myForm" class="form-group" novalidate="">
+   <br/>
+   <br/>
+    
+	
+	<div class="row1">
+	<label for="rolename" class="col-sm-2 control-label">Permission name:<span class="required1"></span></label>
+	<div class="col-sm-10">
+	  <input type="text" name="permissionname" class="form-control" ng-model="data.permissionid" placeholder="Enter permisssion name" required/>
+	  {{data.permissionid}}
+	    <div ng-messages="myForm.permissionname.$error" ng-if="myForm.permissionname.$touched">
+		<div ng-messages-include="messages1.html"></div>
+		</div>
+		
+		
+	</div>
+	</div>
+	
+	
+	<br/>
+   <br/>
+	<br/>
+   <br/>
+	<br/>
+   <br/>
+   
+   
+   
+   
+   <div class="row2">
+	<label for="description" class="col-sm-2 control-label">Create:<span class="required1"></span></label>
+	 <div class="col-sm-10">
+		<input type="radio" name="create" value="true" ng-model="data.create" required/>&nbsp Active &nbsp &nbsp
+		<input type="radio" name="create" value="false" ng-model="data.create" required/>&nbsp Inactive
+		
+		 
+		</div>
+		</div>
+	
+		<br/>
+     <br/>
+	 <br/>
+     <br/>
+	 
+	 
+	 <div class="row3">
+	<label for="description" class="col-sm-2 control-label">Delete:<span class="required1"></span></label>
+	 <div class="col-sm-10">
+		<input type="radio" name="delete" value="true" ng-model="data.delete" required/>&nbsp Active &nbsp &nbsp
+		<input type="radio" name="delete" value="false" ng-model="data.delete" required/>&nbsp Inactive
+		
+		 
+		</div>
+		</div>
+	
+		<br/>
+     <br/><br/>
+     <br/>
+	 
+	 
+	 
+	 <div class="row3">
+	<label for="description" class="col-sm-2 control-label">Update:<span class="required1"></span></label>
+	 <div class="col-sm-10">
+		<input type="radio" name="update" value="true" ng-model="data.update" required/>&nbsp Active &nbsp &nbsp
+		<input type="radio" name="update" value="false" ng-model="data.update" required/>&nbsp Inactive
+		
+		 
+		</div>
+		</div>
+	
+		<br/>
+     <br/><br/>
+     <br/>
+	 
+	 
+	 
+	 
+	 <div class="row3">
+	<label for="description" class="col-sm-2 control-label">View:<span class="required1"></span></label>
+	 <div class="col-sm-10">
+		<input type="radio" name="view" value="true" ng-model="data.view" required/>&nbsp Active &nbsp &nbsp
+		<input type="radio" name="view" value="false" ng-model="data.view" required/>&nbsp Inactive
+		
+		 
+		</div>
+		</div>
+	
+		<br/>
+     <br/>
+	 <br/>
+     <br/>
+	 
+	 <center> <button type="submit" class="btn btn-primary btn-large" ng-click="submit()"><b>Create</b></button></center>
+	 
+	 {{result}}
+	 </body>
+  </html>

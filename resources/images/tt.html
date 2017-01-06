@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>Tiles</title>
+	  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	 
+	 
+	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	 
+	 <script>
+	 <!-- document.querySelector("#myCard").classList.toggle("flip") -->
+	 </script>
+	 
+	 <style>
+	 * entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 350px;
+	border-radius:20px;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+     <!-- background:#1B2631; -->
+	<!-- border:solid 2px white; -->
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+
+
+/* back, initially hidden pane */
+.back {
+    background: #ddd;
+	transform: rotateY(180deg);
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+img {
+    border: 10px solid #34495E;
+    border-radius: 4px;
+    padding: 5px;
+}
+</style>
+	 </head>
+	
+	 
+	
+	  
+	 <!-- <body style="background-image:url(bg.jpg); background-repeat:no-repeat"> -->
+	 <body style="background-color:#808080; background-repeat:no-repeat">
+	 
+	 
+	  <div>
+	  <center> <h3 style="color:black; background-color:white; border-radius:20px; width:100%;height:60px; margin-top:5px;padding-top:15px"><b>Admin Login</b></h3></center>
+	  </div>
+	
+	
+	 
+<div class="row">
+<div class="col-sm-4">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+        <img src="download.jpg"		style="background-repeat:no-repeat; margin-left:20px; border-radius:10px; width:100%; height:100%">
+			<p style="margin-top:30px; margin-left:40px; font-size:30px; color:black"><b>Configuration</b></p>
+		</div>
+		<div class="back">
+			<ul>
+  <li><a ui-sref="createrole">Create Role</a></li>
+  <li><a  ui-sref="addfeature">Add Feature</a></li>
+  <li><a ui-sref="allotpermission">Allot Permission</a></li>
+  <li><a  ui-sref="role feature">Role Features</a></li>
+</ul>
+</br>
+</br>
+<ul>
+  <li><a ui-sref="createleave">Create Leave</a></li>
+  <li><a  ui-sref="leaveperiod">Leave Period</a></li>
+  <li><a  ui-sref="workweek">Work Week</a></li>
+  <li><a  ui-sref="createholiday">Create Holiday</a></li>
+</ul>
+</br>
+</br>
+<ul>
+  <li><a  ui-sref="adddept">Add Department</a></li>
+  
+</ul>
+
+
+
+
+
+
+ 
+	     </div>
+	</div>
+</div>
+</div>
+	
+	<div class="col-sm-4">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+         <img src="pro.png"	style="background-repeat:no-repeat; margin-left:5px; border-radius:10px; width:100%; height:100%">
+			<p style="margin-top:30px; margin-left:100px; font-size:30px; color:black"><b>Profile</b></p>
+		</div>
+		<div class="back">
+			<ul>
+				  <li><a ui-sref="newregis">Registration</a></li></br>
+				  <li><a  ui-sref="myinfogetlist">All Emp Details</a></li></br>
+				  <li><a  ui-sref="myinfo">My Info</a></li></br>
+			
+				  <li><a  ui-sref="cont">Contact details</a></li></br>
+				  <li><a  ui-sref="ch">Change Password</a></li></br>
+				  <li><a  ui-sref="createvisitors">Create Visitors</a></li></br>
+				  <li><a  ui-sref="pagination1">Visitors Data</a></li>
+			</ul>
+		</div>
+	</div>
+   </div>
+   </div>
+
+
+   
+   
+   
+   
+   
+
+<div class="col-sm-4">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front"> 
+		<img src="att.jpg" style="background-repeat:no-repeat; margin-left:0px; border-radius:10px; width:100%; height:100%">
+		<!-- style="background-image:url(att.jpg); background-repeat:no-repeat; border:solid 2px black"> -->
+			<p style="margin-top:30px; margin-left:60px; font-size:30px ; color:black"><b>Attendence</b></p>
+		</div>
+		<div class="back">
+			<ul>
+			       <li><a  ui-sref="viewatt">Veiw Attendence</a></li></br>
+				  <li><a  ui-sref="Usertracking">User Tracking</a></li></br>
+				  <li><a  ui-sref="timesheetnew">Time Sheet</a></li></br>
+				  <li><a  ui-sref="swipedetailsnew">Swipe Details</a></li></br>
+			
+				  
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+</br></br></br></br></br>
+
+
+
+
+<div class="row1">
+<div class="col-sm-4">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+        <img src="leave.jpg"  style="background-repeat:no-repeat; margin-left:0px; border-radius:10px; width:100%; height:100%">
+			<p style="margin-top:30px; margin-left:100px; font-size:30px; color:black"><b>Leave</b></p>
+		</div>
+		<div class="back">
+				<ul>
+				  <li><a ui-sref="applyleave">Apply Leave</a></li></br>
+				  <li><a  ui-sref="searchholi">Search Holiday</a></li></br>
+				  <li><a  ui-sref="mang1">Leave Management</a></li></br>
+				  </ul>
+		</div>
+	</div>
+	</div>
+	</div>
+	
+	<div class="col-sm-4">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+         <img src="events.jpg"	style="background-repeat:no-repeat; margin-left:0px; border-radius:10px; width:100%; height:100%">
+			<p style="margin-top:30px; margin-left:120px; font-size:30px; color:black"><b>Events</b></p>
+		</div>
+		<div class="back">
+		<ul>
+			<li><a  ui-sref="event">Add Event</a></li>
+		</ul>
+		</div>
+	</div>
+   </div>
+   </div>
+
+
+
+<div class="col-sm-4">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front"> 
+		<img src="repo.jpg" style="background-repeat:no-repeat; margin-left:0px; border-radius:10px; width:100%; height:100%">
+		<!-- style="background-image:url(att.jpg); background-repeat:no-repeat; border:solid 2px black"> -->
+			<p style="margin-top:30px; margin-left:110px; font-size:30px ; color:black"><b>Reports</b></p>
+		</div>
+		<div class="back">
+			back
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>

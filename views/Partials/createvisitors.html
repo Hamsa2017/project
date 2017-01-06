@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VISITORS</title>
+ <!--<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+ <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="jquery-ui.min.css"/>
+	 
+	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>-->
+	  
+<link rel="stylesheet" href="src/css/visitors1.css">
+<link rel="stylesheet" href="src/css/wicki.css">
+
+<!--<script src="trail1module.js"></script>
+<script src="trail1controller.js"></script>
+<script src="dest\wickedpicker.min.js"></script>-->
+
+<!-- <script src="trail1dir.js"></script>-->
+ 
+
+
+ <style>
+@font-face {
+    font-family: 'fontello';
+    src: url('dest/fonts/fontello.eot');
+    src: url('dest/fonts/fontello.eot?#iefix') format('embedded-opentype'),
+    url('dest/fonts/fontello.woff') format('woff'),
+    url('dest/fonts/fontello.ttf') format('truetype'),
+    url('dest/fonts/fontello.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="main-login main-center">
+   <center><div class="headding"><h3>Visitors</h3></div></center>
+
+<form  name="form"   novalidate="">
+
+<!--<center><h1> VISITORS</h1></center>-->
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Date:</label>
+<div class="col-md-10" >
+<input type="date" class="form-control" ng-model="data.date" id="date" name="date" required>
+ {{data.date|date:'yyyy/MM/dd'}}
+
+<div  ng-messages="form.date.$error" ng-if="form.date.$touched">
+
+     <p ng-message="required">Date is required.</p>
+</div>
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Visitors Name:</label>
+<div class="col-md-10" >
+<input type="text" class="form-control" id="visitorsname" ng-model="data.visitorname" name="visitorsname" placeholder="visitors name" required>
+{{data.visitorname}}
+<div  ng-messages="form.visitorsname.$error" ng-if="form.visitorsname.$touched">
+
+     <p ng-message="required">Name is required.</p>
+</div>
+</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Phone Number:</label>
+<div class="col-md-10" >
+<input type="text" class="form-control" id="pn" ng-model="data.phonenumber" name="pn" placeholder="+91-8147600536"  ng-pattern="/^(\+\91{1,2}[- ])\d{10}$/" required> 
+{{data.phonenumber}}
+<div  ng-messages="form.pn.$error" ng-if="form.pn.$touched">
+
+     <p ng-message="required">Phone number required.</p>
+	 <p ng-message="pattern">Please enter valid phone number</p>
+</div>
+</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Time In :</label>
+<div class="col-md-10" >
+<input type="text"  class="form-control" name="timepicker"  ng-model="data.timein" my-timepicker/>
+							{{data.timein}}
+ <!-- <div  ng-messages="form.time in .$error" ng-if="form.time in.$touched">
+
+     <p ng-message="required">Time in is required.</p>
+</div> -->
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Time Out:</label>
+<div class="col-md-10" >
+<input type="text"  class="form-control" ng-model="data.timeout" id="time"  name="timeout" my-timepicker />
+{{data.timeout}}
+<!--<div  ng-messages="form.timeout.$error" ng-if="form.timeout.$touched">
+
+     <p ng-message="required">Time out is required.</p>
+</div>-->
+</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Purpose:</label>
+<div class="col-md-10" >
+<input type="text" class="form-control" id="purpose" name="purpose" ng-model="data.purpose" placeholder="purpose" required>
+{{data.purpose}}
+<div  ng-messages="form.purpose.$error" ng-if="form.purpose.$touched">
+
+     <p ng-message="required">Purpose is required.</p>
+</div>
+</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Contact Person:</label>
+<div class="col-md-10" >
+<input type="text" class="form-control" id="contactperson" ng-model="data.contactperson" name="contactperson" placeholder="contact Person" required>
+{{data.contactperson}}
+<div  ng-messages="form.contactperson.$error" ng-if="form.contactperson.$touched">
+
+     <p ng-message="required">Contact Person is required.</p>
+</div>
+</div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div class="form-group">
+<label  class="col-md-6" for="currpass">Company Name:</label>
+<div class="col-md-10" >
+<input type="text" class="form-control" id="company" name="company"  ng-model="data.company"placeholder="company" required>
+{{data.company}}
+<div  ng-messages="form.company.$error" ng-if="form.company.$touched">
+
+     <p ng-message="required">Company Name required.</p>
+</div>
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+ 
+ <div class="row">
+					<div class="col-sm-12">
+                         <button type="submit" class="btn btn-primary btn-large"   ng-disabled="myForm.$invalid" ng-click="RegisterUser()" >Submit</button>
+				
+					</div>
+</form>
+</div>
+</div>
+
+{{result}}
+
+</body>
+</html>

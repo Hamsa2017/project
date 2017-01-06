@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+ <!-- <title>Create Holiday</title>
+	  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+ 
+	 
+	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+	
+	  <script src="createholiday.js"></script>
+	  <script src="createholidayctrl.js"></script>-->
+	  
+	    <link rel="stylesheet" href="src/css/createholiday.css">
+	  
+	  <script type="text/ng-template" id="messages1.html">
+       <p ng-message="required">field required</p>
+        </script>	 
+	  
+	  
+	  
+	  
+	  
+	</head>
+	
+	<body ng-controller="createholidayCtrl">
+	
+	<div class="main-login main-center">
+	<center><div class="headding"><h3>Create Holiday</h3></div></center>
+	<form class="form-group"  name="myForm"  novalidate="">
+	</br>
+	</br>
+	
+	
+	         <div class="row1">
+			 <label for="name" class="col-sm-2 control-lable">Holiday Name:<span class="required1"></span></label>
+			 <div class="col-sm-10">
+			 <input type="text"  class="form-control" name="holiday1" ng-model="data.nameofholiday"  required  placeholder="please enter the event type name" >
+			 {{data.nameofholiday}}
+			 <div ng-messages="myForm.holiday1.$error" ng-if="myForm.holiday1.$touched">
+			 <div ng-messages-include="messages1.html"></div>
+			 </div>
+			 </div>
+			  </div>
+			
+			
+			
+			 </br>
+			 </br>
+			 </br>
+			 </br>
+	
+	
+	         <div class="row2">
+			 <label for="name" class="col-sm-2 control-lable">Date:<span class="required1"></span></label>
+			 <div class="col-sm-10">
+			 <input type="date"  class="form-control" name="date1" ng-model="data.date"  required  placeholder="please enter the event type name" >
+			 {{data.date|date:'yyyy/MM/dd'}}
+			 <div ng-messages="myForm.leave1.$error" ng-if="myForm.leave1.$touched">
+			 <div ng-messages-include="messages1.html"></div>
+			 </div>
+			 </div>
+			  </div>
+			
+			
+			
+			 </br>
+			 </br>
+			 </br>
+			 </br>
+	       
+		   
+		     <div class="row3">
+			 <div class="col-sm-offset-2 col-sm-6">
+			 <input type="checkbox" name="situ" value="true" ng-model="data.repeatsanually">&nbsp Repeats Annually<br>
+			 </div>
+			 </div>
+			 
+			 
+			 </br>
+			 </br>
+			 </br>
+			 </br>
+			 
+			 
+			  
+              <div class="row4" >
+		              <label for="duration" class="col-sm-2 control-label">Duration:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.full_halfday"  name="duration" id="duration2" required>
+		     
+									   <option selected disabled value="">Choose here</option>
+									   <option  ng-repeat="x in names">{{x}}</option>
+
+
+                                     </select>     
+                  
+                  
+        
+									 
+									 
+									 
+								
+									 
+									 
+									 
+									 
+                                              {{data. full_halfday}}
+									<div ng-messages="myForm.duration.$error" ng-if="myForm.duration.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				
+		
+            <div class="row5">
+				<div class="col-sm-6">
+				<center><button type="refersh" class="btn btn-primary btn-large"  value="Refresh Page" onClick="window.location.reload()">Edit</button></center>
+				</div>
+				
+				<div class="col-sm-6">
+				<center><button type="submit" class="btn btn-primary btn-large" ng-disabled="myForm.$invalid" ng-click="submit()">Create</button></center>
+				</div>
+			</div>
+	  </form>
+	 </div>	
+	 
+	 {{result}}
+</body>
+</html>	
+				
+				
+				
+				
+		
+										

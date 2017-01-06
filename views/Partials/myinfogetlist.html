@@ -1,0 +1,147 @@
+<!Doctype html>
+<html>
+<head>
+ 
+	  <link rel="stylesheet" href="src/css/myinfogetlist.css">
+	  
+	  
+	  
+	  
+ </head>
+
+ 
+ <body>
+ 
+ <div class="container">
+ </br>
+ </br>
+    <!-- <div class="main-login main-center"> -->
+	 <center><div class="headding"><h3>All Employee Details</h3></div></center>
+	   
+	   </br>
+	   </br>
+	    
+		 
+		<center>  <table  style="width:100%" class="table table-bordere1d">
+	<thead>
+	  <tr>
+        <th>Employeeid</th>
+        <th>Firstname</th>
+        <th>Middlename</th>
+		<th>Lastname</th>
+		<th>Role</th>
+		<th> Email-id</th>
+		<th>Accesscard number</th>
+		<th> DateofBirth</th>
+		</tr>
+		</thead>
+		
+		<tbody  dir-paginate="ere1 in ere|itemsPerPage:2"> 
+	 
+      <tr>
+        <td>{{ere1.employeeid}}</td>
+       <td>{{ere1.firstname}}</td>
+       <td> {{ere1.middlename}}</td>
+		 <td>{{ere1.lastname}} </td>
+		<td>{{ere1.rolename}}   </td>
+		<td>  {{ere1.emailid}} </td>
+		<td> {{ere1.accesscardnumber}}</td>
+		 <td>   {{ere1.dateofbirth}}</td>
+		 </tr>
+		 </tbody>
+	</table>	 
+ 
+  </table> </center>
+	</div>	 
+	<dir-pagination-controls max-size="1" direction-links="true" boundary-links="true"></dir-pagination-controls>	 
+		 
+		 
+		 
+		 
+		 
+       {{ere}}    
+			
+          
+			
+			
+	</div>    
+	 
+   </body>
+</html>
+ 
+<!--    <div class="main-login main-center">
+	 <center><div class="headding"><h3>Myinfo</h3></div></center>
+	   <!--  {{ere11}}  -->
+<!--	   </br>
+	   </br>
+	     <div ng-repeat="ere1 in ere11"> 
+		 <table style="width:100%">
+		 <tr class="ww">
+            <td>Employeeid:</td>               <td>{{ere1.employeeid}}</td>
+		</tr>
+		<tr class="ww">
+		    <td>Firstname:</td>                <td>{{ere1.firstname}}</td>
+		</tr >
+		<tr>
+			 <td>Middlename: </td>             <td> {{ere1.middlename}}</td>
+		</tr>
+		<tr>
+			<td>Lastname: </td>                <td>{{ere1.lastname}} </td>
+		</tr>
+		<tr>
+			 <td>Employeeid: </td>             <td>{{ere1.employeeid}} </td>
+		</tr>
+		<tr>
+			 <td>Role: </td>                   <td>{{ere1.rolename}}   </td>
+		</tr>
+		<tr>
+		    <td> Email-id:</td>              <td>  {{ere1.emailid}} </td>
+		</tr>
+		<tr>
+			<td> Accesscard number:</td>      <td> {{ere1.accesscardnumber}}</td>
+		</tr>
+		<tr>
+			 <td>DateofBirth:</td>          <td>   {{ere1.dateofbirth}}</td>
+		</tr>
+		<tr>
+			<td> Dateofjoining:</td>        <td>   {{ere1.dateofjoining}}</td>
+		</tr>
+		<tr>
+		    <td>Contact number:</td>        <td>   {{ere1.mobilenumber}} </td>
+		</tr>
+		<tr>
+			<td>Departname:</td>            <td>   {{ere1.deptname}}</td>
+		</tr>
+		<tr>
+			<td>Shift:</td>                <td>  {{ere1.shift}}</td>
+		</tr>
+		<tr>
+             <td>Gender: </td>               <td>   {{ere1.gender}}</td>
+		</tr>
+		<tr>
+			<td>Remotelogin:</td>             <td> {{ere1.remotelogin}}</td>
+		</tr>
+		<tr>
+			<td>Status:</td>                 <td>  {{ere1.status}}</td>
+		</tr>
+        </table>
+
+			<!--<h3> Contact Details</h3>
+			
+			Street:              {{ere1.street}}</br>
+			Area:                {{ere1.area}}</br>
+			City:                {{ere1.city}}</br>
+			State:               {{ere1.state}}</br>
+			Postalcode:          {{ere1.postalcode}}</br>
+			Country:             {{ere1.country}}</br>
+			Telephone:           {{ere1.telephone}}</br>
+			Personalmail:        {{ere1.personalmail}}</br>-->
+          
+<!--			<center><a href="cont.html"><button type="submit" class="btn btn-primary btn-large" ng-click="editItem(ere1)">Edit </button></a></center>
+			
+	    </div>
+	 </div>
+   </body>
+</html>
+
+ 

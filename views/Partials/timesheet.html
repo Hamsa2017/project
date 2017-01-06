@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<title>Timesheet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="dest\bower_components\jquery\dist\jquery.min.js"></script>
+  <link rel="stylesheet" href="dest\bower_components\jquery-ui\themes\black-tie\jquery-ui.css">
+  <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+  <script src="dest\bower_components\angular\angular.min.js"></script>
+  <script src="dest\bower_components\angular-messages\angular-messages.min.js"></script>
+  <script src="dest\bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+  <link rel="stylesheet" href="dest\bower_components\bootstrap\dist\css\bootstrap.min.css">
+	<script src="dest\bower_components\lodash\dist\lodash.min.js"></script>
+	<script src="dest\bower_components\restangular\dist\restangular.min.js"></script> 
+	<script src="src\js\app.js\timesheetmodule.js"></script>
+	<script src="src\js\controllers\timesheetctrl.js"></script> -->
+	<link rel="stylesheet" href="src\css\attendence.css"/>
+	<!--  <script>document.write(wtc1)</script> 
+ -->
+<style>
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+</style>
+</head>
+</br></br></br></br></br>
+
+<body ng-controller="myTime">
+
+<div class="container-fluid">
+<div class="jsp">
+	<center><div class="headding"><h3>Time Sheet Attendence</h3></div></center>
+</div>
+<br>
+<br>
+<br>
+
+<center>
+
+	<div class="main-login main-center">
+	   </br>
+	   </br>
+	    <div>
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead>
+        			<tr>
+        				<th>EMP ID</th>
+        				<th>Date</th>
+        				<th>Login</th>
+						<th>Logout</th>
+						<th>Swipes</th>
+						<th>Total Number of Hours</th>
+					</tr>
+        		</thead>
+				<tbody ng-repeat="wtc in wtc1">
+        			<tr>
+        				<td> {{wtc.employeeid}}</td>
+        				<td>{{wtc.date}}</td>
+        				<td>{{wtc.login}}</td>
+						<td>{{wtc.logout}}</td>
+						<td>{{wtc.swipes}}</td>
+						<td>{{wtc.total_number_of_hours}}</td>
+        			</tr>
+        		</tbody>
+        	</table>
+			</div>
+	   
+					
+					<dir-pagination-controls max-size="15" direction-links="true" boundary-links="true"></dir-pagination-controls>
+			   </div>
+			</center>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+<!--
+  <title>Events</title>
+	  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+ 
+	  <!-- <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>  -->
+<!--	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>-->
+	  
+	<!--  <script src="dest\wickedpicker.min.js"></script>
+	  <script src="event.js"></script>
+	  <script src="eventctrl.js"></script>
+	  <script src="trail1dir.js"></script> -->
+    <link rel="stylesheet" href="src/css/wicki.css">
+	  <link rel="stylesheet" href="src/css/event.css">
+	  
+<style>
+@font-face {
+    font-family: 'fontello';
+    src: url('dest/fonts/fontello.eot');
+    src: url('dest/fonts/fontello.eot?#iefix') format('embedded-opentype'),
+    url('dest/fonts/fontello.woff') format('woff'),
+    url('dest/fonts/fontello.ttf') format('truetype'),
+    url('dest/fonts/fontello.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+</style>
+	
+
+
+
+<script type="text/ng-template" id="messages1.html">
+<p ng-message="required">field required</p>
+</script>	  
+		
+<script type="text/ng-template" id="messages2.html">
+<p ng-message="required">from date is required</p>
+</script>	  
+<script type="text/ng-template" id="messages3.html">
+<p ng-message="required">to date is required</p>
+</script>			  
+	  
+<script type="text/ng-template" id="messages4.html">
+<p ng-message="required">from time is required</p>
+</script>	  
+<script type="text/ng-template" id="messages5.html">
+<p ng-message="required">to time is required</p>
+</script>
+
+
+<script type="text/ng-template" id="messages6.html">
+<p ng-message="required">department need to be selected</p>
+</script>
+
+<script type="text/ng-template" id="messages7.html">
+<p ng-message="required">location need to be specified</p>
+
+</script>
+	  
+</head>
+    
+    
+<body ng-controller="eventCtrl">
+
+
+<div class="main-login main-center">
+
+
+
+
+<center><div class="headding"><h3>Events</h3></div></center>
+
+
+<form class="form-group"  name="myForm"  novalidate="">
+ </br>
+	 </br>
+	 
+			 <div class="row1">
+			 <label for="name" class="col-sm-2 control-lable"> Event Name:<span class="required1"></span></label>
+			 <div class="col-sm-10">
+			 <input type="text"  class="form-control" name="event1" ng-model="data.eventname"  required  placeholder="please enter the event name" >
+			 {{data.eventname}}
+			 <div ng-messages="myForm.event1.$error" ng-if="myForm.event1.$touched">
+			 <div ng-messages-include="messages1.html"></div>
+			 </div>
+			 </div>
+			  </div>
+			
+			
+			
+			 </br>
+			 </br>
+			 </br>
+			 </br>
+	 
+			<div class="row3">
+			<label for="name" class="col-sm-2 control-label"> No of days:<span class="required1"></span></label>
+             <div class="col-sm-10">
+			 <input type="text" name="noofdays1" class="form-control" ng-model="data.noofdays"  required placeholder="enter no of days"/>
+			 {{data.noofdays}}
+			 <div ng-messages="myForm.noofdays1.$error" ng-if="myForm.noofdays1.$touched">
+			 <div ng-messages-include="messages1.html"></div>
+			 </div>
+             </div>
+			 </div>
+			 
+			 </br>
+			 </br>
+			 </br>
+			 </br> 
+					 
+			 <div class="row4">
+			 <label for="name" class="col-sm-2 control-label">Date from:<span class="required1"></span></label>
+			 <div class="col-sm-4">
+			 <input type="date" name="fromdate1" class="form-control" ng-model="data.fromdate" required />
+			 {{data.fromdate|date:'yyyy/MM/dd'}}
+			 <div ng-messages="myForm.fromdate1.$error" ng-if="myForm.fromdate1.$touched">
+			 <div ng-messages-include="messages2.html"></div>
+			 </div>
+			 </div>
+			 
+			 <label for="name" class="col-sm-2 control-label">Date to:<span class="required1"></span></label>
+			 <div class="col-sm-4">
+			 <input type="date" name="todate1" class="form-control" ng-model="data.todate" required />
+			 {{data.todate|date:'yyyy/MM/dd'}}
+			 <div ng-messages="myForm.todate1.$error" ng-if="myForm.todate1.$touched">
+			 <div ng-messages-include="messages3.html"></div>
+			 </div>
+			 </div>
+			 
+			 </div>
+			 
+			 </br>
+			 </br>
+			 </br>
+			 </br> 
+			 
+			 
+			 
+			 
+				<div class="row5">
+				<label  for="name" class="col-md-2 control-label">Time from:<span class="required1"></span></label>
+				<div class="col-sm-4">
+				<input type="text1"  class="form-control" name="fromtime1"  ng-model="data.fromtime" my-timepicker/>
+				{{data.fromtime}}
+				<div ng-messages="myForm.fromtime1.$error" ng-if="myForm.fromtime1.$touched">
+			    <div ng-messages-include="messages4.html"></div>
+			    </div>
+				 
+				</div>
+				
+
+				
+
+
+				
+				<label  for="name" class="col-md-2 control-label">Time to:<span class="required1"></span></label>
+				<div class="col-sm-4">
+				<input type="text1"  class="form-control"  name="totime1" ng-model="data.totime"    my-timepicker required/>
+				{{data.totime}}
+				<div ng-messages="myForm.totime1.$error" ng-if="myForm.totime1.$touched">
+			    <div ng-messages-include="messages5.html"></div>
+			    </div>
+				</div>
+				</div>
+							 
+							 
+			 </br>
+			 </br>
+			 </br>
+			 </br> 			 
+							 
+			 
+			 
+			
+			
+			
+			 
+			 
+			 <div class="row6" >
+		    <label for="dept" class="col-sm-2 control-label">Department:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.departmentname"  ng-options=" c for c in events" name="depts1" id="depts" required/>
+		     
+									  
+
+
+                                     </select>
+									 {{data.departmentname}}
+									<div ng-messages="myForm.depts1.$error" ng-if="myForm.depts1.$touched ">
+									<div ng-messages-include="messages6.html"></div>
+										</div>
+									 
+					        </div>
+			</div>
+		  
+			  </br>
+			 </br>
+			 </br>
+			 </br> 			 
+					
+			 
+	     <div class="row7">
+		<label for="name" class="col-sm-2 control-lable"> Location:<span class="required1"></span></label>
+	    <div class="col-sm-10">
+		 <input type="text" name="location1" class="form-control" ng-model="data.location"  required  placeholder="please enter the event location" />
+		 {{data.location}}
+		 <div ng-messages="myForm.location1.$error" ng-if="myForm.location1.$touched">
+		<div ng-messages-include="messages7.html"></div>
+		</div>
+		 </div>
+		 </div>
+			
+			 </br>
+			 </br>
+			 </br>
+			 </br> 
+			
+			
+	    <div class="row8">
+		<label for="name" class="col-sm-2 control-label">Description:<span class="required1"></span></label>
+		<div class="col-sm-10">
+		<textarea rows="4" cols="90" name="description1" ng-model="data.description" required/>
+		{{data.description}}
+		 <div ng-messages="myForm.description1.$error" ng-if="myForm.description1.$touched">
+		<div ng-messages-include="messages7.html"></div>
+		</div>
+		</textarea>
+		</div>
+		</div>
+		
+
+		     </br>
+			 </br>
+			 </br>
+			 </br> 
+              </br>
+			 </br> 
+
+			 
+		<div class="row9">
+        <div class="col-sm-6">
+         <center><button type="submit"  ng-disabled="myForm.$invalid"  class="btn btn-primary btn-large" ng-click="submit()" >Submit</button></center>
+        </div>
+       
+         <div class="col-sm-6">
+         <center><button type="submit" class="btn btn-default btn-large" >Cancel</button></center>
+        </div>
+       	 </div>  
+</form>
+
+{{data2}}
+</body>
+</html>

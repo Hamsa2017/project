@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+
+  <!--<title>changepassword</title>
+	  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	 
+	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+	 
+	  <script src="adddept.js"></script>
+	  <script src="adddeptctrl.js"></script>-->
+	
+	  
+	<link rel="stylesheet" href="src/css/adddept.css">
+	
+	
+<script type="text/ng-template"id="messages2.html">
+<p ng-message="required"> field required</p>
+
+
+</script>
+<!--<script>
+var app = angular.module('myApp',['ngMessages']);
+
+app.controller('addCtrl',['$scope', function($scope){
+$scope.adddepartments = [
+];
+$scope.addRow = function(){		
+	$scope.adddepartments.push({ 'deptname':$scope.departmentname, 'manager': $scope.managername, 'status':$scope.status });
+	$scope.departmentname='';
+	$scope.managername='';
+	$scope.status='';
+};
+}]);	
+</script>-->	
+	
+	</head>
+	
+	<body ng-controller="addCtrl">
+	
+	
+	<div class="main-login main-center">
+   <center><div class="headding"><h3>Add Department</h3></div></center>
+   
+   
+   
+	<form class="form-group"  name="myForm"   ng-submit="addRow()" novalidate="">
+	
+	
+	 </br>
+	 </br>
+	
+	
+	
+	
+	 <div class="row1">
+		
+	    <div class="col-sm-4">
+		 <input type="text" name="deptname2" class="form-control" ng-model="data.departmentname"   placeholder="please enter Department name"  required />
+		 {{data.departmentname}}
+		  <div ng-messages="myForm.deptname2.$error" ng-if="myForm.deptname2.$touched">
+			<div ng-messages-include="messages2.html"></div>
+			</div>	
+	</div>
+	
+	
+	<div class="col-sm-4">
+		 <input type="text" name="managername2" class="form-control" ng-model="data.managername"   placeholder="please enter Manager name"  required />
+		 {{data.managername}}
+		  <div ng-messages="myForm.managername2.$error" ng-if="myForm.managername2.$touched">
+			<div ng-messages-include="messages2.html"></div>
+			</div>	
+	</div>
+	
+	
+	<label for="name" class="col-sm-1 control-lable">Status:</label>
+	<div class="col-sm-1">
+     <input type="checkbox" name="check" ng-model="data.status" value="active"><br>
+	 {{data.status}}
+	</div>
+	
+	<div class="col-sm-2">
+		<button type="submit" class="btn btn-default btn-large" >Add</button>
+		</div>
+	
+	</div>
+		</br>
+		</br>
+		</br>
+		</br>
+		
+	<table class="table">
+	<tr>
+		<th>Department
+		</th>
+		<th>Manager/Leave Approver
+		</th>
+		<th>Status
+		</th>
+	</tr>
+	<tr ng-repeat="dept in adddepartments">
+		<td>{{dept.deptname}}
+		</td>
+		<td>{{dept.manager}}
+		</td>
+		<td>{{dept.status}}
+		</td>
+	</tr>
+</table>
+
+
+<div class="row1">
+<div class="col-sm-6">
+ <center><button type="button"  ng-disabled="myForm.$invalid"  class="btn btn-primary btn-large" ng-click="submit()" >Submit</button></center>	
+ </div>
+ <div class="col-sm-6">
+ <button type="refersh" class="btn btn-primary btn-large"  value="Refresh Page" onClick="window.location.reload()">Reset</button>
+ </div>
+ </div>
+ 
+ {{data1}}
+ </body>
+ </html>

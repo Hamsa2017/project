@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<title>Attendance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="dest\bower_components\jquery\dist\jquery.min.js"></script>
+  <link rel="stylesheet" href="dest\bower_components\jquery-ui\themes\black-tie\jquery-ui.css">
+  <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+  <script src="dest\bower_components\angular\angular.min.js"></script>
+  <script src="dest\bower_components\angular-messages\angular-messages.min.js"></script>
+  <script src="dest\bower_components\bootstrap\dist\js\bootstrap.min.js"></script>
+  <link rel="stylesheet" href="dest\bower_components\bootstrap\dist\css\bootstrap.min.css">
+  
+	<script src="dest\bower_components\lodash\dist\lodash.min.js"></script>
+	<script src="dest\bower_components\restangular\dist\restangular.min.js"></script> 
+	<script src="src\js\app.js\module.js"></script>
+	<script src="src\js\controllers\attend.js"></script>--> 
+	 <link rel="stylesheet" href="src\css\attendence.css"/> 
+	<!-- <script>
+			jQuery(function(){
+				$("#btn-search").click(function(){
+				$(".error").hide();
+				var hasError = false;
+				var searchReg = /^[a-zA-Z0-9-]+$/;
+				var searchVal = $("#search-text").val();
+				if(searchVal == '') {
+					$("#search-text").after('<span class="error">Please enter a search term.</span>');
+					hasError = true;
+				} else if(!searchReg.test(searchVal)) {
+					$("#search-text").after('<span class="error">Enter valid text.</span>');
+					hasError = true;
+				}
+				if(hasError == true) {return false;}
+			});
+		});
+	</script>
+	 -->
+  <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+</style>
+  
+</head>
+
+</br></br></br></br></br>
+
+<body ng-controller="myAtt">
+<div class="container-fluid">
+<div class="jsp">
+	<center><div class="headding"><h3>Attendance Page</h3></div></center>
+</div>
+<br>
+<br>
+<br>
+	
+<center>
+
+<!-- 
+		<form>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+			<!-- </br></br></br>
+			Search By Name / Emp_ID / Department: 
+			<select>
+			<option>Name</option>
+			<option>Emp_ID</option>
+			<option>Department</option>			
+			</select> -->
+			<!-- <div class="form-inline">
+				<div class="row"> -->
+				<!-- <label for="employeeid">Employee ID/Name:</label>
+				<input type="text" id="name1" name="name2" class="form-control" ng-model="data.employeeid" placeholder="Employee ID/Name"/>
+					{{data.employeeid}} -->
+					
+					
+			<!-- <form method="post" name="form1" action="">
+				 <fieldset>
+					  <div>
+					  <label>Employee ID/Name:</label>
+					  <input type="text" name="search-text" id="search-text" value="" size="32" />
+					  <input type="submit" value="Submit" id="btn-search" />
+					  </div>
+				 </fieldset>
+			</form> -->
+			<!-- <input type="button" value="Find"/> -->
+			<!-- </div>
+			</div> -->
+			<!-- </br></br></br> -->
+			
+		<!-- </form>
+ -->
+	<div class="main-login main-center">
+	   </br>
+	   </br>
+	    <div>
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead>
+        			<tr>
+        				<th>EMP ID</th>
+        				<th>Date</th>
+        				<th>Dept Name</th>
+						<th>Company Visited</th>
+						<th>Distance</th>
+						<th>Start Time</th>
+						<th>End Time</th>
+						<th>Feedback</th>
+					</tr>
+        		</thead>
+				<tbody  ng-repeat="ada in ada1">
+        			<tr>
+        				<td> {{ada.employeeid}}</td>
+        				<td>{{ada.date}}</td>
+        				<td>{{ada.deptname}}</td>
+						<td>{{ada.companyvisited}}</td>
+						<td>{{ada.distance}}</td>
+						<td>{{ada.starttime}}</td>
+						<td>{{ada.endtime}}</td>
+						<td>{{ada.feedback}}</td>
+					   
+        			</tr>
+					
+        			
+        		</tbody>
+        	</table>
+			</div>
+	   
+		
+					<dir-pagination-controls max-size="15" direction-links="true" boundary-links="true"></dir-pagination-controls>
+			   </div>
+				</center>
+
+</div>
+</body>
+</html>

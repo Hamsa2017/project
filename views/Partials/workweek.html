@@ -1,0 +1,211 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <!--<title>Work Week</title>
+	  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="dest\bower_components\jquery-ui\jquery-ui.min.js"></script>
+ 
+	 
+	 <script src="bower_components/angular/angular.min.js"></script>
+	 <script src="angular-messages/angular-messages.min.js"></script>
+	
+	 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+	  <script src="bower_components/restangular/dist/restangular.min.js"></script>
+	
+	  <script src="workweek.js"></script>
+	  <script src="workweekctrl.js"></script>-->
+	  
+	    <link rel="stylesheet" href="src/css/workweek.css">
+	  
+	  <script type="text/ng-template" id="messages1.html">
+       <p ng-message="required">field required</p>
+        </script>	 
+	  
+	  
+	  
+	  
+	  
+	</head>
+	
+	<body ng-controller="workweekCtrl">
+
+	<div class="main-login main-center">
+	<center><div class="headding"><h3>Work Week</h3></div></center>
+	<form class="form-group"  name="myForm"  novalidate="">
+	</br>
+	</br>
+	
+			<div class="row1" >
+		      <label for="workweek" class="col-sm-2 control-label">Monday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.monday"  name="monday" id="monday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data. full_halfday}}
+									<div ng-messages="myForm.monday.$error" ng-if="myForm.monday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				
+				<div class="row2" >
+		      <label for="workweek" class="col-sm-2 control-label">Tuesday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.tuesday"  name="tuesday" id="tuesday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.tuesday}}
+									<div ng-messages="myForm.tuesday.$error" ng-if="myForm.tuesday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				
+				<div class="row3" >
+		        <label for="workweek" class="col-sm-2 control-label">Wednesday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.wednesday"  name="wednesday" id="wednesday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.wednesday}}
+									<div ng-messages="myForm.wednesday.$error" ng-if="myForm.wednesday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+	          <div class="row4" >
+		        <label for="workweek" class="col-sm-2 control-label">Thursday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.thursday"  name="thursday" id="thursday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.thursday}}
+									<div ng-messages="myForm.thursday.$error" ng-if="myForm.thursday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				
+				 <div class="row5" >
+		          <label for="workweek" class="col-sm-2 control-label">Friday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.friday"  name="friday" id="friday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.friday}}
+									<div ng-messages="myForm.sunday.$error" ng-if="myForm.sunday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				
+				 <div class="row6" >
+		          <label for="workweek" class="col-sm-2 control-label">Saturday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.saturday"  name="saturday" id="saturday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.saturday}}
+									<div ng-messages="myForm.sunday.$error" ng-if="myForm.sunday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+				
+				 <div class="row7" >
+		          <label for="workweek" class="col-sm-2 control-label">Sunday:<span class="required1"></span></label>
+							<div class="col-sm-10">
+								
+								   
+									
+									 <select  class="form-control"  ng-model="data.sunday"  name="sunday" id="sunday2" ng-options=" c for c in workweek" required/>
+		     
+									   
+										 </select>
+									 {{data.sunday}}
+									<div ng-messages="myForm.sunday.$error" ng-if="myForm.sunday.$touched">
+									<div ng-messages-include="messages1.html"></div>
+									</div>
+									 
+					         </div>
+			    </div>
+		  
+		 
+				</br>
+				</br>
+				</br>
+				</br>
+	
